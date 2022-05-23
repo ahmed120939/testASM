@@ -1,0 +1,488 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentation API",
+        "description": " Documentation API Pour Projet TESTASM",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/typeReclamation/getAll": {
+            "get": {
+                "tags": [
+                    "TypeReclamation"
+                ],
+                "summary": "retourner la liste des TypeReclamations",
+                "description": "retourner la liste des TypeReclamations",
+                "operationId": "GetAllTypeReclamation",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/typeReclamation/store": {
+            "post": {
+                "tags": [
+                    "TypeReclamation"
+                ],
+                "description": "Creation TypeReclamation",
+                "operationId": "addTypeReclamation",
+                "requestBody": {
+                    "description": "Creation TypeReclamation",
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "description": "Nom",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "pet response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        },
+        "/api/user/getAll": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Retourner la liste des utilisateur",
+                "description": "Retourner la liste des utilisateur",
+                "operationId": "GetAlluser",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/user/get/{user_id}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Retouner un utilisateur par ID",
+                "description": "Retouner un utilisateur par ID",
+                "operationId": "Getuser",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/registre": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Creation utilisateur",
+                "operationId": "addUser",
+                "requestBody": {
+                    "description": "Creation utilisateur",
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "description": "Nom",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "Email",
+                                        "type": "email"
+                                    },
+                                    "password": {
+                                        "description": "Mot de passe",
+                                        "type": "password"
+                                    },
+                                    "password_confirmation": {
+                                        "description": "Confirmation mot de passe",
+                                        "type": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "pet response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Login utilisateur",
+                "operationId": "login",
+                "requestBody": {
+                    "description": "Login utilisateur",
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "description": "Email",
+                                        "type": "email"
+                                    },
+                                    "password": {
+                                        "description": "Mot de passe",
+                                        "type": "password"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "pet response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Logout utilisateur",
+                "operationId": "logout",
+                "requestBody": {
+                    "description": "Logout utilisateur"
+                },
+                "responses": {
+                    "200": {
+                        "description": "pet response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        },
+        "/api/user/delete/{user_id}": {
+            "delete": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Supprimer un utilisateur par ID",
+                "description": "Supprimer un utilisateur par ID",
+                "operationId": "DeleteUser",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/reclamation/getAll": {
+            "get": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "summary": "Retourner la liste des Reclamations",
+                "description": "Retourner la liste des Reclamations",
+                "operationId": "GetAllReclamation",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/reclamation/get/{reclamation_id}": {
+            "get": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "summary": "Retouner un utilisateur par ID",
+                "description": "Retouner un utilisateur par ID",
+                "operationId": "GetReclamationID",
+                "parameters": [
+                    {
+                        "name": "reclamation_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/reclamation/getByUser/{user_id}": {
+            "get": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "summary": "Retouner un utilisateur par UserID",
+                "description": "Retouner un utilisateur par UserID",
+                "operationId": "GetReclamationUserID",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/api/reclamation/store": {
+            "post": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "description": "Creation Reclamation",
+                "operationId": "AddReclamation",
+                "requestBody": {
+                    "description": "Creation Reclamation",
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "desc": {
+                                        "description": "description",
+                                        "type": "string"
+                                    },
+                                    "user_id": {
+                                        "description": "UserID",
+                                        "type": "integer"
+                                    },
+                                    "type_reclamation_id": {
+                                        "description": "TypeReclamationID",
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "pet response"
+                    },
+                    "default": {
+                        "description": "unexpected error"
+                    }
+                }
+            }
+        },
+        "/api/reclamation/delete/{rec_id}": {
+            "delete": {
+                "tags": [
+                    "Reclamation"
+                ],
+                "summary": "Supprimer une reclamation par ID",
+                "description": "Supprimer une reclamation par ID",
+                "operationId": "DeleteReclamation",
+                "parameters": [
+                    {
+                        "name": "rec_id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        }
+    }
+}
